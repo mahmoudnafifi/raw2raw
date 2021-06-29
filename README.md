@@ -16,6 +16,12 @@ Project page of the paper [Semi-Supervised Raw-to-Raw Mapping.](https://arxiv.or
 
 ![teaser](https://user-images.githubusercontent.com/37669469/123860756-53886680-d8f4-11eb-95a2-f324221b26a5.jpg)
 
+### Abstract
+The raw-RGB colors of a camera sensor vary due to the spectral sensitivity differences across different sensor makes and models. This paper focuses on the task of mapping between different sensor raw-RGB color spaces. Prior work addressed this problem using a pairwise calibration to achieve accurate color mapping. Although being accurate, this approach is less practical as it requires: (1) capturing pair of images by both camera devices with a color calibration object placed in each new scene; (2) accurate image alignment or manual annotation of the color calibration object. This paper aims to tackle color mapping in the raw space through a more practical setup. Specifically, we present a semi-supervised raw-to-raw mapping method trained on a small set of paired images alongside an unpaired set of images captured by each camera device. Through extensive experiments, we show that our method achieves better results compared to other domain adaptation alternatives in addition to the single-calibration solution. We have generated a new dataset of raw images from two different smartphone cameras as part of this effort. Our dataset includes unpaired and paired sets for our semi-supervised training and evaluation. 
+
+![main](https://user-images.githubusercontent.com/37669469/123867143-fb556280-d8fb-11eb-85b5-ba67a5863435.jpg)
+
+
 
 
 ### Dataset
@@ -23,7 +29,17 @@ Our dataset consists of an unpaired and paired set of images captured by two dif
 
 ![dataset_examples](https://user-images.githubusercontent.com/37669469/123861174-dc9f9d80-d8f4-11eb-96dd-b8ffe134f8aa.jpg)
 
-Original DNG files of our raw images, in addition to the associated source code to extract raw images and metadata, will be released soon.
+To download the dataset, please first download the DNG files, associated metadata, and pre-computed mapping from the following [link]().
+
+Then, run `raw_extraction.py` code. Note that the code need sthe following libs to be installed: scipy, cv2, rawpy, and numpy. Make sure that the dataset is located in the root in `dataset` directory as follows:
+```
+- root/
+      dataset/
+             paired/
+             unpaired/
+```
+
+The code will generate `raw-rggb` and `vis` directory (inside each subdirectory for each camera) that include `RGGB` and `RGB` images, respectively. Note that the `vis` directory (that includes `RGB` images) is for visualization as these images are gamma compressed and saved in JPG format. For the `paired` set, the code will generate `raw-rggb` and `anchor-raw-rggb` for testing and anchor sets, respectively. 
 
 
 ### MIT License
