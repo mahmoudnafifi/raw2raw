@@ -4,12 +4,12 @@
 York University  
 
 
-Project page of the paper [Semi-Supervised Raw-to-Raw Mapping.](https://arxiv.org/abs/2106.13883) Mahmoud Afifi and Abdullah Abuolaim. arXiv preprint arXiv:2106.13883, 2021. If you use this code, please cite our paper:
+Project page of the paper [Semi-Supervised Raw-to-Raw Mapping.](https://arxiv.org/abs/2106.13883) Mahmoud Afifi and Abdullah Abuolaim. In BMVC, 2021. If you use this code, please cite our paper:
 ```
-@article{afifi2021raw2raw,
+@InProceedings{afifi2021raw2raw,
   title={Semi-Supervised Raw-to-Raw Mapping},
   author={Afifi, Mahmoud and Abuolaim, Abdullah},
-  journal={arXiv preprint arXiv:2106.13883},
+  booktitle={British Machine Vision Conference (BMVC)},
   year={2021}
 }
 ```
